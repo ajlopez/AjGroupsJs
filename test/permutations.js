@@ -61,3 +61,20 @@ assert.equal(twoelements.length, 2);
 assert.equal(twoelements[0].equals(cyc2), true);
 assert.equal(twoelements[1].isIdentity(), true);
 
+// generate symmetric 3 using two generators
+
+var symmetric3 = ajgroups.generate(ajgroups.exchange(3), ajgroups.cyclic(3));
+assert.ok(symmetric3);
+assert.equal(symmetric3.length, 3*2*1);
+
+// generate symmetric 4 using two generators
+
+var symmetric4 = ajgroups.generate(ajgroups.exchange(4), ajgroups.cyclic(4));
+assert.ok(symmetric4);
+assert.equal(symmetric4.length, 4*3*2*1);
+
+// generate symmetric 5 using two generators
+
+var symmetric5 = ajgroups.generate(ajgroups.exchange(5), ajgroups.cyclic(5));
+assert.ok(symmetric5);
+assert.equal(symmetric5.length, 5*4*3*2*1);
