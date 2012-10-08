@@ -41,5 +41,9 @@ var id4 = ajgroups.identity(4);
 assert.ok(id4);
 assert.equal(id4.isIdentity(), true);
 
+// get cycle 2
 
+var cyc2 = ajgroups.cyclic(2);
+assert.ok(cyc2);
+assert.equal(cyc2.equals(perm1), true);
 
