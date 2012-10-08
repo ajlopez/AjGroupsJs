@@ -16,3 +16,22 @@ assert.equal(perm2.isIdentity(), true);
 // Equals to itselft
 
 assert.equal(perm1.equals(perm1), true);
+
+// Equal to other permutation with same values
+
+var perm3 = ajgroups.permutation([1, 0]);
+assert.equal(perm1.equals(perm3), true);
+assert.equal(perm3.equals(perm1), true);
+
+// Equal to other permutation with different length
+
+var perm4 = ajgroups.permutation([1, 0, 2, 3]);
+assert.equal(perm1.equals(perm4), true);
+assert.equal(perm4.equals(perm1), true);
+
+// Not equal to identity
+
+var identity = ajgroups.permutation([0, 1]);
+assert.equal(perm1.equals(identity), false);
+assert.equal(identity.equals(perm1), false);
+
