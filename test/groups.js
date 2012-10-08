@@ -41,3 +41,15 @@ assert.equal(elements.length, 9);
 var elements = symmetric3.elements(function(el) { return el.order() == 3 });
 assert.ok(elements);
 assert.equal(elements.length, 2);
+
+// Is subgroup
+
+assert.equal(symmetric3.isSubgroup(symmetric4), true);
+assert.equal(symmetric4.isSubgroup(symmetric3), false);
+
+// equals
+
+assert.equal(symmetric3.equals(symmetric3), true);
+assert.equal(symmetric3.equals(symmetric4), false);
+assert.equal(symmetric3.equals(ajgroups.symmetric(3)), true);
+
