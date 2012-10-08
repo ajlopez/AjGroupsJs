@@ -47,3 +47,10 @@ var cyc2 = ajgroups.cyclic(2);
 assert.ok(cyc2);
 assert.equal(cyc2.equals(perm1), true);
 
+// generate using cycl2
+
+var twoelements = ajgroups.generate(cyc2);
+assert.ok(twoelements);
+assert.equal(twoelements.length, 2);
+assert.equal(twoelements[0].equals(cyc2), true);
+assert.equal(twoelements[1].isIdentity(), true);
