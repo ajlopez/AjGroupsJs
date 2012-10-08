@@ -21,11 +21,20 @@ assert.ok(elements);
 assert.equal(elements.length, 1);
 assert.equal(elements[0].isIdentity(), true);
 
+var elements = symmetric4.elements(function(el) { return el.order() == 1 });
+assert.ok(elements);
+assert.equal(elements.length, 1);
+assert.equal(elements[0].isIdentity(), true);
+
 // Get order 2
 
 var elements = symmetric3.elements(function(el) { return el.order() == 2 });
 assert.ok(elements);
 assert.equal(elements.length, 3);
+
+var elements = symmetric4.elements(function(el) { return el.order() == 2 });
+assert.ok(elements);
+assert.equal(elements.length, 9);
 
 // Get order 3
 
