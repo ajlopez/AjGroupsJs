@@ -13,3 +13,6 @@ var perm2 = perm1.multiply(perm1);
 assert.ok(perm2);
 assert.equal(perm2.isIdentity(), true);
 
+// Equals to itselft
+
+assert.equal(perm1.equals(perm1), true);
