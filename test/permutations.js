@@ -35,3 +35,11 @@ var identity = ajgroups.permutation([0, 1]);
 assert.equal(perm1.equals(identity), false);
 assert.equal(identity.equals(perm1), false);
 
+// get identity
+
+var id4 = ajgroups.identity(4);
+assert.ok(id4);
+assert.equal(id4.isIdentity(), true);
+
+
+
