@@ -78,3 +78,10 @@ assert.equal(symmetric4.length, 4*3*2*1);
 var symmetric5 = ajgroups.generate(ajgroups.exchange(5), ajgroups.cyclic(5));
 assert.ok(symmetric5);
 assert.equal(symmetric5.length, 5*4*3*2*1);
+
+// order
+
+assert.equal(identity.order(), 1);
+assert.equal(exchange2.order(), 2);
+assert.equal(ajgroups.cyclic(5).order(), 5);
+
