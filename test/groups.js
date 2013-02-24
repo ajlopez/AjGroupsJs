@@ -51,6 +51,8 @@ assert.equal(elements.length, 2);
 // Is subgroup
 
 assert.equal(symmetric3.isSubgroup(symmetric4), true);
+assert.equal(symmetric2.isSubgroup(symmetric4), true);
+assert.equal(symmetric2.isSubgroup(symmetric3), true);
 assert.equal(symmetric4.isSubgroup(symmetric3), false);
 
 // equals
