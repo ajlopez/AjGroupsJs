@@ -24,6 +24,12 @@ var cyclic = ajgroups.createGroup(ajgroups.cyclic(6));
 var subgroups = cyclic.subgroups();
 assert.equal(subgroups.length, 4);
 
+// Symmetric 3
+
+var group = ajgroups.symmetric(3);
+var subgroups = group.subgroups();
+assert.equal(subgroups.length, 6);
+
 function contains(elements, element) {
     for (var n in elements) {
         if (elements[n].equals(element))
