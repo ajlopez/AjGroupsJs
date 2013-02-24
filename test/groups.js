@@ -1,6 +1,12 @@
 
 var ajgroups = require('../'),
     assert = require('assert');
+    
+// Symmetric 2
+
+var symmetric2 = ajgroups.symmetric(2);
+assert.ok(symmetric2);
+assert.equal(symmetric2.order(), 2*1);    
 
 // Symmetric 3
 
