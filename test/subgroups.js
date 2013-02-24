@@ -30,6 +30,30 @@ var group = ajgroups.symmetric(3);
 var subgroups = group.subgroups();
 assert.equal(subgroups.length, 6);
 
+// Symmetric 4
+
+var group = ajgroups.symmetric(4);
+var subgroups = group.subgroups();
+assert.equal(subgroups.length, 30);
+
+// Cyclic 4
+
+var group = ajgroups.createGroup(ajgroups.cyclic(4));
+var subgroups = group.subgroups();
+assert.equal(subgroups.length, 3);
+
+// Cyclic 5
+
+var group = ajgroups.createGroup(ajgroups.cyclic(5));
+var subgroups = group.subgroups();
+assert.equal(subgroups.length, 2);
+
+// Cyclic 7
+
+var group = ajgroups.createGroup(ajgroups.cyclic(7));
+var subgroups = group.subgroups();
+assert.equal(subgroups.length, 2);
+
 function contains(elements, element) {
     for (var n in elements) {
         if (elements[n].equals(element))
