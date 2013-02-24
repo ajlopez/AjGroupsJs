@@ -16,4 +16,15 @@ assert.equal(group1b.order(), 1);
 assert.equal(group1.equals(group1b), true);
 assert.equal(group1b.equals(group1), true);
 
+// Create group using an exchange permutation
 
+var group2 = ajgroups.createGroup([1, 0]);
+assert.ok(group2);
+assert.equal(group2.order(), 2);
+
+// Create group using exchange and cyclic permutation
+
+var group3 = ajgroups.createGroup([1, 0, 2], [1, 2, 0]);
+assert.ok(group3);
+assert.equal(group3.order(), 6);
+assert.ok(group3.equals(ajgroups.symmetric(3)));
