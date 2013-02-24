@@ -28,3 +28,12 @@ var group3 = ajgroups.createGroup([1, 0, 2], [1, 2, 0]);
 assert.ok(group3);
 assert.equal(group3.order(), 6);
 assert.ok(group3.equals(ajgroups.symmetric(3)));
+
+// Groups created from prime order cyclic permutation are equals
+
+var cyclic5 = ajgroups.cyclic(5);
+var cyclic55 = cyclic5.multiply(cyclic5);
+var groupa = ajgroups.createGroup(cyclic5);
+var groupb = ajgroups.createGroup(cyclic55);
+assert.equal(groupa.equals(groupb), true);
+assert.equal(groupb.equals(groupa), true);
