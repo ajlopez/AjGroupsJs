@@ -22,3 +22,9 @@ assert.equal(symmetric4.isCyclic(), false);
 var cyclic3 = ajgroups.cyclic(3);
 var group = ajgroups.createGroup(cyclic3);
 assert.equal(group.isCyclic(), true);
+
+// Exchanges are cyclic
+
+for (var k = 2; k <= 6; k++)
+    assert.equal(ajgroups.createGroup(ajgroups.cyclic(k)).isCyclic(), true);
+    
