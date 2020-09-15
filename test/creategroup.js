@@ -1,6 +1,5 @@
 
 const ajgroups = require('../');
-const assert = require('assert');
 
 exports['Create group using identity array'] = function (test) {
     const group = ajgroups.createGroup([0]);
