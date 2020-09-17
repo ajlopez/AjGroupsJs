@@ -1,31 +1,27 @@
 
 const ajgroups = require('../');
-const assert = require('assert');
 
-// Get cyclic subgroups of S1
-
-{
+exports['Get cyclic subgroups of S1'] = function (test) {
     const s1 = ajgroups.symmetric(1);
     const cyclicSubgroups = s1.cyclicSubgroups();
-    assert.ok(cyclicSubgroups);
-    assert.equal(cyclicSubgroups.length, 1);
+    
+    test.ok(cyclicSubgroups);
+    test.equal(cyclicSubgroups.length, 1);
 }
 
-// Get cyclic subgroups of S2
-
-{
+exports['Get cyclic subgroups of S2'] = function (test) {
     const s1 = ajgroups.symmetric(2);
     const cyclicSubgroups = s1.cyclicSubgroups();
-    assert.ok(cyclicSubgroups);
-    assert.equal(cyclicSubgroups.length, 2);
+    
+    test.ok(cyclicSubgroups);
+    test.equal(cyclicSubgroups.length, 2);
 }
 
-// Get cyclic subgroups of S3
-
-{
+exports['Get cyclic subgroups of S3'] = function (test) {
     const s1 = ajgroups.symmetric(3);
     const cyclicSubgroups = s1.cyclicSubgroups();
-    assert.ok(cyclicSubgroups);
-    assert.equal(cyclicSubgroups.length, 5);
+    
+    test.ok(cyclicSubgroups);
+    test.equal(cyclicSubgroups.length, 5);
 }
 
