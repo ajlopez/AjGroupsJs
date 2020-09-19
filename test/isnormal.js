@@ -1,16 +1,13 @@
 
 const ajgroups = require('../');
-const assert = require('assert');
     
-// Identity and Symmetric groups are normals
-
-{
+exports['Identity and Symmetric groups are normals'] = function (test) {
     for (let k = 1; k <= 5; k++) {
         const id = ajgroups.createGroup(ajgroups.identity(k));
         const group = ajgroups.symmetric(k);
         
-        assert.equal(id.isNormalSubgroup(group), true);
-        assert.equal(group.isNormalSubgroup(group), true);
+        test.equal(id.isNormalSubgroup(group), true);
+        test.equal(group.isNormalSubgroup(group), true);
     }
 }
 
