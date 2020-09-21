@@ -1,44 +1,35 @@
 
 const ajgroups = require('../');
-const assert = require('assert');
 
-// Normal Subgroups contains identity and original group
-
-{
+exports['Normal Subgroups contains identity and original group'] = function (test) {
     const symmetric3 = ajgroups.symmetric(3);
     const id = ajgroups.createGroup([0]);
 
     const subgroups = symmetric3.normalSubgroups();
 
-    assert.equal(contains(subgroups, id), true);
-    assert.equal(contains(subgroups, symmetric3), true);
+    test.equal(contains(subgroups, id), true);
+    test.equal(contains(subgroups, symmetric3), true);
 }
 
-// Cyclic group with prime order has 2 normal subgroups
-
-{
+exports['Cyclic group with prime order has 2 normal subgroups'] = function (test) {
     const cyclic = ajgroups.createGroup([1, 2, 0]);
     const subgroups = cyclic.normalSubgroups();
 
-    assert.equal(subgroups.length, 2);
+    test.equal(subgroups.length, 2);
 }
 
-// Cyclic group order 6
-
-{
+exports['Cyclic group order 6'] = function (test) {
     const cyclic = ajgroups.createGroup(ajgroups.cyclic(6));
     const subgroups = cyclic.normalSubgroups();
     
-    assert.equal(subgroups.length, 4);
+    test.equal(subgroups.length, 4);
 }
 
-// Symmetric 3
-
-{
+exports['Symmetric 3'] = function (test) {
     const group = ajgroups.symmetric(3);
     const subgroups = group.normalSubgroups();
 
-    assert.equal(subgroups.length, 3);
+    test.equal(subgroups.length, 3);
 }
 
 function contains(elements, element) {
