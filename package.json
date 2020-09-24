@@ -7,8 +7,7 @@
 , "main": "./lib/ajgroups.js"
 , "engines": { "node": ">= 0.6.0" }
 , "scripts": {
-    "test": "node ./test.js",
-    "test2": "simpleunit ./test"
+    "test": "simpleunit ./test"
   }
 , "dependencies": {
   }
